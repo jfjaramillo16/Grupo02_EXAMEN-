@@ -33,3 +33,50 @@ $(function () {
     });
   }
 });
+// === Ejercicio: botón EJECUTAR + slider con fade ===
+(function ($) {
+  $(function () {
+    var fadeState = { inited: false, timer: null, idx: 0 };
+
+    // Mostrar/ocultar el ejercicio y arrancar el fade solo una vez
+    $(document).on('click', '#btn-ejercicio-slider', function (e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+
+      var $btn = $(this);
+      var $box = $('#ejercicio-slider-box');
+
+      $box.toggleClass('d-none');
+      var abierto = !$box.hasClass('d-none');
+
+      // Cambia texto/ícono del botón
+      $btn.html(
+        abierto
+          ? '<i class="fas fa-eye-slash"></i> Ocultar'
+          : '<i class="fas fa-code"></i> EJECUTAR'
+      );
+
+      // Iniciar animación fade solo la primera vez
+      if (abierto && !fadeState.inited) {
+        var $imgs = $('#sliderFade .fade-img');
+        if ($imgs.length) {
+          $imgs.hide().eq(0).show();
+          fadeState.inited = true;
+          fadeState.idx = 0;
+
+          fadeState.timer = setInterval(function () {
+            var $actual = $imgs.eq(fadeState.idx);
+            $actual.stop(true, true).fadeOut(800);
+            fadeState.idx = (fadeState.idx + 1) % $imgs.length;
+            $imgs.eq(fadeState.idx).stop(true, true).fadeIn(800);
+          }, 3000);
+        }
+      }
+
+      // (Opcional) refrescar ScrollSpy si está disponible (Bootstrap 3)
+      if (typeof $('body').scrollspy === 'function') {
+        try { $('body').scrollspy('refresh'); } catch (err) {}
+      }
+    });
+  });
+})(jQuery);

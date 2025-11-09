@@ -228,14 +228,6 @@
 <pre><code>&lt;div id="miSlider" class="carousel slide carousel-fade" data-bs-ride="carousel"&gt;...&lt;/div&gt;</code></pre>
       </div>
 
-      <!-- 1.7 Accesibilidad y buenas prácticas -->
-      <h5 class="mt-4">Buenas prácticas</h5>
-      <ul>
-        <li>Siempre define <code>alt</code> en las imágenes.</li>
-        <li>Usa <code>aria-label</code> en los indicadores (p.ej., “Diapositiva 1”).</li>
-        <li>Optimiza el peso de las imágenes para rendimiento.</li>
-        <li>Evita IDs duplicados si hay más de un carrusel en la página.</li>
-      </ul>
     </div>
   </div>
 
@@ -253,47 +245,6 @@
         <li>Cómo superponer <em>captions</em> legibles (título + texto) en cada imagen.</li>
         <li>Configuración por atributos <code>data-*</code> y errores comunes a evitar.</li>
       </ul>
-
-      <h6 class="mt-3">Estructura base (guía rápida)</h6>
-      <div class="bg-light p-3 rounded mb-3">
-<pre><code>&lt;div id="miSlider" class="carousel slide" data-bs-ride="carousel"&gt;
-  &lt;div class="carousel-inner"&gt;
-    &lt;div class="carousel-item active"&gt;
-      &lt;img src="img/sala.jpg" class="d-block w-100" alt="Sala"&gt;
-    &lt;/div&gt;
-    &lt;!-- más .carousel-item ... --&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-
-      <h6 class="mt-3">Indicadores + Controles</h6>
-      <div class="bg-light p-3 rounded mb-3">
-<pre><code>&lt;div class="carousel-indicators"&gt;
-  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="0" class="active" aria-label="Diapositiva 1"&gt;&lt;/button&gt;
-  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="1" aria-label="Diapositiva 2"&gt;&lt;/button&gt;
-  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="2" aria-label="Diapositiva 3"&gt;&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;button class="carousel-control-prev" type="button" data-bs-target="#miSlider" data-bs-slide="prev"&gt;
-  &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
-  &lt;span class="visually-hidden"&gt;Anterior&lt;/span&gt;
-&lt;/button&gt;
-&lt;button class="carousel-control-next" type="button" data-bs-target="#miSlider" data-bs-slide="next"&gt;
-  &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
-  &lt;span class="visually-hidden"&gt;Siguiente&lt;/span&gt;
-&lt;/button&gt;</code></pre>
-      </div>
-
-      <h6 class="mt-3">Captions (título + texto)</h6>
-      <div class="bg-light p-3 rounded mb-3">
-<pre><code>&lt;div class="carousel-item active"&gt;
-  &lt;img src="img/comedor.jpg" class="d-block w-100" alt="Comedor"&gt;
-  &lt;div class="carousel-caption d-none d-md-block"&gt;
-    &lt;h5&gt;Comedor Elegante&lt;/h5&gt;
-    &lt;p&gt;Diseño minimalista para reuniones especiales.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      </div>
 
       <button class="btn btn-primary mt-2">EJECUTAR</button>
 
@@ -435,56 +386,208 @@
     </div>
   </div>
 
-<!-- === 4. EJERCICIO (Con Efecto / Animación) === -->
+<!-- SECCIÓN EJERCICIO: Slider (Fade Automático) -->
 <div class="card content-card mb-4">
   <div class="card-header">
-    <h6 class="m-0 font-weight-bold">4. EJERCICIO (Con Efecto / Animación)</h6>
+    <h6 class="m-0 font-weight-bold">EJERCICIO: Slider (Fade) – Interfaz Grupo 2</h6>
   </div>
 
   <div class="card-body">
-    <!-- Explicación breve -->
-    <h5 class="card-title">¿Qué harás?</h5>
-   <p class="mb-3">
-  Este ejercicio crea un “mini-carrusel” con jQuery que alterna imágenes usando <em>fade</em>. 
-  Se apilan varias fotos dentro de un contenedor fijo; al iniciar, se ocultan todas excepto la primera. 
-  Luego, cada 3 segundos, la imagen visible se desvanece y aparece la siguiente. 
-  Puedes ajustar el tiempo de animación (1000 ms) y el intervalo (3000 ms).
-</p>
+    <p class="text-justify mb-4">
+      En esta sección se explica, paso a paso, cómo se implementó el <strong>slider con efecto de desvanecimiento (fade)</strong>
+      dentro de la columna derecha (<code>#rightMenu</code>) de tu interfaz. Al final verás la ejecución en vivo.
+    </p>
 
-    <ul class="mb-3">
-      <li>Contenedor fijo con imágenes apiladas (<code>position-absolute</code>).</li>
-      <li>Ocultas todas menos la primera; luego rotas con <code>fadeOut</code>/<code>fadeIn</code>.</li>
-      <li>Puedes ajustar <code>1000</code> ms (animación) y <code>3000</code> ms (intervalo).</li>
-    </ul>
+    <!-- Contenido explicativo SIEMPRE visible (sin toggle) -->
+    <div class="ejercicio-contenido" id="ejercicio-contenido">
+      <h5 class="card-title mb-4">Explicación del Código Principal</h5>
 
-    <!-- Snippet guía (JS) -->
-    <h6 class="mt-2">Lógica (jQuery)</h6>
-    <div class="bg-light p-3 rounded mb-3">
-<pre><code>$(document).ready(function(){
-  let index = 0;
-  const imgs = $('#sliderFade .fade-img');
-  // Oculta todas menos la primera
-  imgs.not(':first').hide();
-  // Cambia cada 3 s
-  setInterval(function () {
-    imgs.eq(index).fadeOut(1000);
-    index = (index + 1) % imgs.length;
-    imgs.eq(index).fadeIn(1000);
+      <!-- 1. Ubicación en la maqueta -->
+      <div class="mb-4">
+        <h6 class="font-weight-bold">1. Ubicación en la maqueta (Grid)</h6>
+        <p class="text-justify mb-3">
+          El slider se colocó en la <strong>columna derecha</strong> de la fila principal, ajustando las columnas a
+          <code>2 + 4 + 6 = 12</code> para que todo encaje. Ahí vive el contenedor del slider.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded">
+<pre><code>&lt;div class="row"&gt;
+  &lt;div id="leftMenu"  class="col-lg-2 col-md-2 col-sm-12"&gt;...&lt;/div&gt;
+  &lt;div id="content"   class="col-lg-4 col-md-4 col-sm-12"&gt;...&lt;/div&gt;
+
+  &lt;!-- AQUÍ va el slider --&gt;
+  &lt;div id="rightMenu" class="col-lg-6 col-md-7 col-sm-12 text-center"&gt;
+    &lt;div id="sliderFade"&gt;
+      &lt;img src="img/imagen1.jpg" class="fade-img" alt="Sala moderna"&gt;
+      &lt;img src="img/imagen2.jpg" class="fade-img" alt="Comedor elegante"&gt;
+      &lt;img src="img/imagen3.jpg" class="fade-img" alt="Perro en el jardín"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="img/slider-ubicacion.png" class="img-fluid rounded" alt="Ubicación del slider en la maqueta">
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Estructura HTML del slider -->
+      <div class="mb-4">
+        <h6 class="font-weight-bold">2. Estructura HTML del Slider</h6>
+        <p class="text-justify mb-3">
+          El slider es un contenedor <code>#sliderFade</code> con <strong>varias imágenes</strong> que comparten la clase
+          <code>.fade-img</code>. La primera se muestra y el resto se ocultan; el JavaScript se encarga de irlas
+          desvaneciendo.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded">
+<pre><code>&lt;div id="sliderFade"&gt;
+  &lt;img src="img/imagen1.jpg" class="fade-img" alt="Sala moderna"&gt;
+  &lt;img src="img/imagen2.jpg" class="fade-img" alt="Comedor elegante"&gt;
+  &lt;img src="img/imagen3.jpg" class="fade-img" alt="Perro en el jardín"&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="img/slider-estructura.png" class="img-fluid rounded" alt="Estructura HTML del slider">
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Estilos CSS claves -->
+      <div class="mb-4">
+        <h6 class="font-weight-bold">3. Estilos CSS Claves (Responsive + Recorte)</h6>
+        <p class="text-justify mb-3">
+          Para que las imágenes <em>no se salgan del contenedor</em> y mantengan proporción, se usa
+          <code>overflow:hidden</code>, <code>object-fit:cover</code> y una relación de aspecto 16:9. 
+          Además, cada foto ocupa todo el contenedor.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded">
+<pre><code>#rightMenu{ overflow:hidden; }
+
+#rightMenu #sliderFade{
+  position:relative; width:100%; max-width:100%;
+  overflow:hidden; border-radius:8px; background:#000;
+  aspect-ratio:16/9; /* proporción */
+}
+
+@supports not (aspect-ratio:16/9){
+  #rightMenu #sliderFade{ height:52vw; min-height:220px; max-height:480px; }
+}
+
+#rightMenu #sliderFade .fade-img{
+  position:absolute; inset:0; width:100%; height:100%;
+  object-fit:cover; display:none;
+}
+#rightMenu #sliderFade .fade-img:first-child{ display:block; }</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="img/slider-css.png" class="img-fluid rounded" alt="CSS del slider">
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Lógica JavaScript -->
+      <div class="mb-4">
+        <h6 class="font-weight-bold">4. Lógica JavaScript (Fade automático)</h6>
+        <p class="text-justify mb-3">
+          El script recorre las imágenes cada 3 segundos. Se oculta la actual con <code>fadeOut()</code> y se muestra la
+          siguiente con <code>fadeIn()</code>. Esta función ya está en tu <code>js/main.js</code>.
+        </p>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="bg-light p-3 rounded">
+<pre><code>function initFadeSlider(root){
+  var $slider = root ? $(root) : $('#rightMenu #sliderFade');
+  if(!$slider.length || $slider.data('fade-init')) return;
+
+  var $imgs = $slider.find('.fade-img');
+  if($imgs.length &lt; 2){ $imgs.show(); $slider.data('fade-init',true); return; }
+
+  $imgs.hide().eq(0).show();
+  var i = 0;
+  setInterval(function(){
+    var next = (i + 1) % $imgs.length;
+    $imgs.eq(i).fadeOut(800);
+    $imgs.eq(next).fadeIn(800);
+    i = next;
   }, 3000);
-});</code></pre>
+
+  $slider.data('fade-init', true);
+}</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img src="img/slide.png" class="img-fluid rounded" alt="JS del slider">
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Buenas prácticas -->
+<div class="mb-4">
+  <h6 class="font-weight-bold">5. Buenas prácticas aplicadas</h6>
+
+  <div class="row">
+    <!-- Columna 1: lista -->
+    <div class="col-sm-12 col-md-6">
+      <ul class="mb-0">
+        <li><strong>Alt descriptivo</strong> en cada imagen (accesibilidad).</li>
+        <li><code>object-fit: cover</code> para no deformar las fotos.</li>
+        <li><code>overflow: hidden</code> para que nada se salga del marco.</li>
+        <li><code>aspect-ratio</code> (y fallback) para mantener la proporción del slider.</li>
+      </ul>
     </div>
 
-    <!-- Botón para mostrar la ejecución -->
-    <button class="btn btn-primary mt-2">EJECUTAR</button>
+    <!-- Columna 2: imagen -->
+     <div class="col-md-6">
+            <img src="img/perro2.png" class="img-fluid rounded" alt="JS del slider">
+          </div>
+    </div>
+</div>
 
-    <!-- Vista en vivo (oculta hasta presionar EJECUTAR) -->
-    <div class="resultado d-none mt-3">
-      <div id="sliderFade" class="position-relative overflow-hidden mb-4" style="height:400px;">
-        <!-- Deja la primera visible y las demás ocultas para evitar parpadeos antes del JS -->
-        <img src="img/imagen1.jpg" class="img-fluid position-absolute w-100 h-100 fade-img" alt="Imagen 1" style="display:block;">
-        <img src="img/imagen2.jpg" class="img-fluid position-absolute w-100 h-100 fade-img" alt="Imagen 2" style="display:none;">
-        <img src="img/imagen3.jpg" class="img-fluid position-absolute w-100 h-100 fade-img" alt="Imagen 3" style="display:none;">
-      </div>       
+
+      <hr class="my-4">
+
+      <!-- EJECUCIÓN -->
+      <h5 class="card-title mb-3">Ejecución del Código</h5>
+      <p class="text-justify mb-3">
+        A continuación puedes <strong>probar el slider</strong> dentro de esta tarjeta. Haz clic en “EJECUTAR” para mostrar/ocultar.
+      </p>
+
+        <div class="alert alert-secondary mt-3 mb-0">
+          El slider cambia de imagen cada <strong>3 segundos</strong> con efecto de desvanecimiento.
+        </div>
+      </div>
+
+ 
+              <!-- Botón para mostrar la ejecución -->
+          <button class="btn btn-primary mt-2">EJECUTAR</button>
+
+          <!-- Vista en vivo (oculta hasta presionar EJECUTAR) -->
+          <div class="resultado d-none mt-3">
+            <!-- quitamos overflow-hidden y hacemos que el iframe llene los 700px -->
+                <div id="sliderFade" class="position-relative mb-4" style="min-height:700px;">
+              <!-- Ejercicio Interactivo (con ruta codificada y alto suficiente) -->
+              <div class="ejercicio-interactivo-ejecucion">
+                  <div class="container-fluid px-0">
+                  <iframe
+                    src="Prueba/Grupo03_PRUEBA_Parte%20II-Seccion%20B/index.html"
+                    class="iframe-ejercicio"
+                    title="Demostración Scrollspy"
+                    frameborder="0"
+                    style="width:100%; height:100%; border:0; display:block;">
+                  </iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
       </div>
     </div>
   </div>

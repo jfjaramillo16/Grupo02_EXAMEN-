@@ -1,0 +1,658 @@
+body {
+  width:1300px;
+  margin: 0 auto;  /* Para que el contenedor este centrado */
+  text-align:center;
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 10px;
+  color:#FFF;
+  font-family:Verdana, Geneva, sans-serif;
+  font-size: 30px;
+}
+
+.Texto{
+  text-align: center;
+  color:#000;
+  font-family:Arial;
+  font-size: 25px;
+	
+}
+
+.Boton {
+  background-color: #ffffff;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(121, 121, 121, 1);
+  border-radius: 8px;
+  color: black;
+  padding: 6px 0px;    /* 🔹 Reducido */
+  text-align: center;
+  text-decoration: none;
+  display: block;          /* 🔹 Hace que el botón ocupe una línea */
+  font-size: 14px;         /* 🔹 Texto más pequeño */
+  margin: 0px auto;        /* 🔹 Centrado y con menos espacio */
+  cursor: pointer;
+  width: 150px;            /* 🔹 Tamaño uniforme más pequeño */
+}
+
+
+/* HEADER   */
+#header {   
+  position:absolute;
+  left:50px;
+  top:20px;
+  width: 1260px;
+  height:170px;
+  float: none;
+  background:inherit;
+  background-color: rgba(0, 255, 255);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+ }
+
+/* navBar  */
+#navBar {
+  position:absolute;
+  left:50px;
+  top:200px;
+  width:1260px;
+  height:70px;
+  float: none;
+  background:inherit;
+  background-color: rgb(0, 0, 0);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding-top: 10px;
+}
+
+
+/* leftMenu  */
+#leftMenu {
+  position:absolute;
+  left:50px;
+  top:280px;
+  width:200px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: rgba(255, 255, 255);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding-top: 30px;
+ }
+
+ 
+ 
+/* content */
+#content {
+  position:absolute;
+  left:270px;
+  top:280px;
+  width:600px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: rgba(51, 153, 51);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+}
+
+
+
+/* rigthMenu */
+#rightMenu {
+  position:absolute;
+  left:890px;
+  top:280px;
+  width:420px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: rgba(0, 0, 0);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+
+/* footer  */
+#footer {
+  position:absolute;
+  left:50px;
+  top:620px;
+  width:1260px;
+  height:60px;
+  float: none;
+  background:inherit;
+  background-color: rgba(255,255,0);
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding-top: 10px;
+}
+
+/* ==============================
+   ESTILOS TABLA GRUPO 3
+   ============================== */
+
+body {
+  background-color: #f5f5f5 !important;
+}
+
+/* Títulos */
+.titulo-grupo {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #222;
+  font-weight: bold;
+}
+
+.subtitulo-grupo {
+  text-align: center;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+/* Tabla personalizada */
+.table.tabla-grupo {
+  width: 80%;
+  margin: 20px auto;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  background-color: white;
+}
+
+/* Encabezado */
+.table.tabla-grupo thead {
+  background-color: #333 !important;
+  color: white !important;
+}
+
+/* Colores por FILAS (comprobado) */
+.table.tabla-grupo tbody tr:nth-child(1) {
+  background-color: #cce5ff !important; /* Azul claro */
+}
+
+.table.tabla-grupo tbody tr:nth-child(2) {
+  background-color: #f8d7da !important; /* Rosado claro */
+}
+
+.table.tabla-grupo tbody tr:nth-child(3) {
+  background-color: #d4edda !important; /* Verde claro */
+}
+
+/* Colores por COLUMNAS (si deseas colorear columnas) */
+.table.tabla-grupo td:nth-child(1),
+.table.tabla-grupo th:nth-child(1) {
+  background-color: #e2e3e5 !important; /* Gris claro para la primera columna (#) */
+}
+
+.table.tabla-grupo td:nth-child(2),
+.table.tabla-grupo th:nth-child(2) {
+  background-color: #dbeafe !important; /* Celeste muy claro para Nombres */
+}
+
+.table.tabla-grupo td:nth-child(3),
+.table.tabla-grupo th:nth-child(3) {
+  background-color: #fef3c7 !important; /* Amarillo claro para Apellidos */
+}
+
+.table.tabla-grupo td:nth-child(4),
+.table.tabla-grupo th:nth-child(4) {
+  background-color: #e7f5e7 !important; /* Verde claro para Correos */
+}
+
+/* Hover */
+.table.tabla-grupo tbody tr:hover {
+  background-color: #fff3cd !important; /* Amarillo suave */
+}
+
+/* Bordes y texto */
+.table.tabla-grupo td,
+.table.tabla-grupo th {
+  vertical-align: middle;
+  font-size: 16px;
+  border: 1px solid #ccc;
+}
+
+/* ===============================
+   ESTILOS PARA LOGIN COMANDANTE
+   =============================== */
+
+/* Fondo oscuro con paisaje */
+body.comandante-login {
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Caja central */
+.login-box {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 40px;
+  width: 350px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* Título */
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Logo */
+.login-box img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* Campos */
+.form-control {
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Botón */
+.btn-login {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #0056b3;
+}
+
+/* Enlace */
+.link {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox label */
+.form-check-label {
+  font-size: 14px;
+}
+
+/* =========================================
+   LOGIN COMANDANTE
+   ========================================= */
+
+/* Fondo oscuro con paisaje */
+body.comandante-login {
+  background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Caja central */
+.login-box {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  padding: 40px;
+  width: 350px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+/* Título */
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Logo */
+.login-box img {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+/* Campos */
+.login-box .form-control {
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+/* Botón */
+.btn-login {
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #0056b3;
+}
+
+/* Enlace */
+.link {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox label */
+.form-check-label {
+  font-size: 14px;
+}
+
+/* =========================================
+   FORMULARIO RESPONSIVO - GRUPO 3
+   ========================================= */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.form-box {
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 30px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.titulo-formulario {
+  text-align: center;
+  color: #d81b60;
+  margin-bottom: 20px;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: bold;
+}
+
+/* Sección Género */
+.secciones {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.secciones h4 {
+  margin-top: 0;
+  color: #333;
+}
+
+/* Botón principal */
+.btn-primary {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  display: block;
+  margin: 5px auto; /* centra el botón */
+  width: fit-content; /* ajuste al contenido */
+  padding: 0px 5px;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background-color: #286090;
+}
+/* =========================================
+   RESPONSIVE DESIGN GENERAL - GRUPO 3
+   ========================================= */
+
+/* 🟢 Configuración base */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#header, #navBar, #leftMenu, #content, #rightMenu, #footer {
+  transition: all 0.4s ease;
+}
+
+/* 🟢 Adaptación general del contenido */
+@media (max-width: 1200px) {
+  body {
+    width: 100%;
+  }
+
+  #header, #navBar, #footer {
+    width: 90%;
+    left: 5%;
+  }
+
+  #leftMenu {
+    left: 5%;
+  }
+
+  #content {
+    left: 30%;
+    width: 55%;
+  }
+}
+
+/* 🟠 Tablets (≤ 992px) */
+@media (max-width: 992px) {
+  /* Quita posiciones absolutas y usa flujo normal */
+  #header, #navBar, #leftMenu, #content, #rightMenu, #footer {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    float: none !important;
+    width: 95% !important;
+    margin: 10px auto !important;
+  }
+
+  /* Ajusta el header */
+  #header {
+    height: auto;
+    padding: 10px;
+  }
+
+  /* Navbar */
+  #navBar {
+    border-radius: 10px;
+    padding: 10px;
+    height: auto;
+  }
+
+  /* Menú izquierdo */
+  #leftMenu {
+    height: auto;
+    padding: 20px 0;
+  }
+
+  /* Contenido principal */
+  #content {
+    height: auto;
+    padding: 20px;
+  }
+
+  #rightMenu {
+    height: auto;
+    padding: 10px;
+  }
+
+  /* Footer */
+  #footer {
+    height: auto;
+    padding: 15px;
+  }
+}
+
+/* 🔵 Móviles (≤ 768px) */
+@media (max-width: 768px) {
+  #header {
+    width: 100%;
+    text-align: center;
+  }
+
+  #header img {
+    width: 80%;
+    height: auto;
+    left: 10%;
+  }
+
+  #navBar {
+    width: 100%;
+    left: 0;
+    border-radius: 0;
+  }
+
+  .navbar {
+    border-radius: 0 !important;
+  }
+
+  #leftMenu {
+    width: 95%;
+    padding: 10px;
+  }
+
+  .Boton {
+    width: 90%;
+    font-size: 14px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #content {
+    width: 95%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  #rightMenu {
+    width: 100% !important;
+    margin-top: 15px !important;
+  }
+
+  #footer {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    font-size: 16px;
+  }
+}
+
+/* ⚫ Pequeños dispositivos (≤ 576px) */
+@media (max-width: 576px) {
+  body {
+    flex-direction: column;
+  }
+
+  #header img {
+    width: 70%;
+    left: 15%;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .Texto {
+    font-size: 18px;
+  }
+
+  #content {
+    padding: 10px;
+  }
+
+  .table.tabla-grupo {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  #rightMenu {
+    width: 100% !important;
+    margin-top: 20px !important;
+  }
+}
+
+/* ==========================
+   🎥 CORRECCIÓN DEL VIDEO
+   ========================== */
+
+/* Garantiza que el video/iframe siempre esté visible */
+#rightMenu iframe, video, .contenedor-video, #miVideo {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 15px auto !important;
+  border: none;
+}
+
+/* Ajuste especial para XS */
+@media (max-width: 768px) {
+  #rightMenu iframe {
+    width: 100% !important;
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  #rightMenu iframe {
+    width: 100% !important;
+    height: 220px !important;
+  }
+}

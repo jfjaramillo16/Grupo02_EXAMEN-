@@ -1,0 +1,109 @@
+/* Fondo general */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor centrado */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Caja del formulario */
+.form-box {
+  background-color: #fff;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 40px 50px;
+  width: 420px;
+  max-width: 95%;
+  text-align: center;
+}
+
+/* Título principal */
+.titulo-formulario {
+  font-size: 30px;
+  color: #d41b5a; /* color fucsia */
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-group {
+  width: 100%;
+}
+
+.input-group-addon {
+  background-color: #f9f9f9;
+  border-right: none;
+}
+
+.form-control {
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+}
+
+/* Focus en los campos */
+.form-control:focus {
+  border-color: #d41b5a;
+  box-shadow: 0 0 5px #d41b5a;
+}
+
+/* Select */
+select.form-control {
+  border-radius: 5px;
+}
+
+/* Checkbox */
+.checkbox label {
+  font-size: 14px;
+}
+
+/* Botón guardar */
+.btn-primary {
+  background-color: #337ab7;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #23527c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-box {
+    width: 90%;
+    padding: 30px 20px;
+  }
+
+  .titulo-formulario {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-box {
+    width: 95%;
+    padding: 25px 15px;
+  }
+
+  .titulo-formulario {
+    font-size: 22px;
+  }
+
+  .btn-primary {
+    font-size: 15px;
+    padding: 8px;
+  }
+}

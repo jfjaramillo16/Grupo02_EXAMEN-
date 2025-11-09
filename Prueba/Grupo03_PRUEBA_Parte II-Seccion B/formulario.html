@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario</title>
+
+  <!-- Bootstrap 3 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <!-- Tus estilos -->
+  <link rel="stylesheet" href="Recursos/Formulario.css" type="text/css"/>
+</head>
+
+<body>
+  <div class="container form-container">
+    <div class="form-box">
+      <h2 class="titulo-formulario">Formulario</h2>
+
+      <form>
+        <!-- Campo NOMBRE -->
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input type="text" class="form-control" placeholder="Ingrese el nombre..." required>
+        </div><br>
+
+        <!-- Campo USUARIO -->
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+          <input type="text" class="form-control" placeholder="Ingrese el usuario..." required>
+        </div><br>
+
+        <!-- Campo CONTRASEÑA -->
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="password" class="form-control" placeholder="Ingrese la contraseña..." required>
+        </div><br>
+
+        <!-- Campo CONFIRMAR CONTRASEÑA -->
+        <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+          <input type="password" class="form-control" placeholder="Confirme la contraseña..." required>
+        </div><br>
+
+        <!-- SECCIÓN GÉNERO -->
+        <div class="secciones text-center">
+          <h4>Género</h4>
+          <label for="genero">Seleccione su género</label>
+          <select id="genero" class="form-control" required>
+            <option value="">--Seleccione--</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="lgtb">LGTB</option>
+          </select>
+        </div><br>
+
+        <!-- Checkbox recordar -->
+        <div class="checkbox text-left">
+          <label><input type="checkbox"> Recuérdame</label>
+        </div><br>
+
+        <!-- Botón GUARDAR -->
+        <button type="submit" class="btn btn-primary btn-block">
+          <i class="glyphicon glyphicon-floppy-disk"></i> Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

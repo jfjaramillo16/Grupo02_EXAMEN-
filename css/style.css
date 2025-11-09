@@ -146,3 +146,149 @@ h1, h2, h3, h4, h5, h6, pre {
   color: #fff !important;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
+
+/* === Slider del panel derecho === */
+#rightMenu .right-slider {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+#rightMenu .right-slider .carousel,
+#rightMenu .right-slider .carousel-inner,
+#rightMenu .right-slider .carousel-item {
+  width: 100%;
+  height: 100%;
+}
+
+#rightMenu .right-slider .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* llena el recuadro sin deformarse */
+  display: block;
+}
+
+#rightMenu .right-slider .carousel-caption {
+  bottom: 14px;
+}
+
+#rightMenu .right-slider .caption-box {
+  display: inline-block;
+  padding: 6px 10px;
+  background: rgba(0,0,0,.55);
+  border-radius: 6px;
+}
+/* Estilos para la sección de Ejercicio */
+.ejercicio-contenido {
+    background-color: #fff;
+}
+
+.ejercicio-interactivo-ejecucion {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contenido-scroll-ejercicio {
+    overflow-y: scroll;
+    height: 500px;
+    position: relative;
+}
+
+.ejercicio-interactivo-ejecucion .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.ejercicio-interactivo-ejecucion .nav-tabs .nav-link {
+    color: #495057;
+    border: 1px solid transparent;
+}
+
+.ejercicio-interactivo-ejecucion .nav-tabs .nav-link:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.ejercicio-interactivo-ejecucion .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.ejercicio-interactivo-ejecucion .nav-pills .nav-link {
+    border-radius: 0;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.ejercicio-interactivo-ejecucion .nav-pills .nav-link.active,
+.ejercicio-interactivo-ejecucion .nav-pills .nav-link.active:focus {
+    background-color: #000;
+    color: #fff;
+}
+
+.ejercicio-contenido {
+    background-color: #fff;
+}
+
+/* Contenedor visual del ejercicio */
+.ejercicio-interactivo-ejecucion {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+.contenido-scroll-ejercicio {
+    overflow-y: scroll;
+    height: 500px;
+    position: relative;
+}
+
+.ejercicio-interactivo-ejecucion .nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.ejercicio-interactivo-ejecucion .nav-tabs .nav-link {
+    color: #495057;
+    border: 1px solid transparent;
+}
+
+.ejercicio-interactivo-ejecucion .nav-tabs .nav-link:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.ejercicio-interactivo-ejecucion .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.ejercicio-interactivo-ejecucion .nav-pills .nav-link {
+    border-radius: 0;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.ejercicio-interactivo-ejecucion .nav-pills .nav-link.active,
+.ejercicio-interactivo-ejecucion .nav-pills .nav-link.active:focus {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Asegura altura al wrapper del iframe */
+#sliderFade {
+  min-height: 700px; /* puedes bajar a 700 si quieres */
+}
+
+/* Iframe a ancho completo y llenando la altura del wrapper */
+.iframe-ejercicio {
+  width: 100% !important;   /* clave para anular cualquier estilo previo */
+  height: 100%;
+  min-height: 700px;        /* mismo mínimo que el wrapper */
+  max-width: 100%;
+  border: 0;
+  display: block;           /* evita espacios fantasma inline */
+  background: #fff;
+}
+
