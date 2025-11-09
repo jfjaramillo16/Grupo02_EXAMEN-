@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6, pre {
 .content-card .card-title,
 .content-card h2,
 .content-card h5 { 
-    color: #000000;
+    color: #4e73df;
     font-weight: 700;
     font-family: 'Nunito', sans-serif; 
 }
@@ -132,4 +132,17 @@ h1, h2, h3, h4, h5, h6, pre {
     color: #000000 !important; 
     font-weight: 700 !important;
     font-family: 'Roboto Mono', monospace !important;
+}
+
+/* ===== CAPTIONS SLIDER (GRUPO 2) ===== */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.carousel-caption h5,
+.carousel-caption p {
+  color: #fff !important;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }

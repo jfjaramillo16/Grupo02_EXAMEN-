@@ -122,151 +122,417 @@
                         </li>
                     </ul>
                 </nav>
-        <!-- ===== CONTENIDO PRINCIPAL ===== -->
-        <div class="container-fluid">
-          <h1 class="h3 mb-4 text-center text-uppercase">Slider - Grupo 02</h1>
+<!-- ===== CONTENIDO PRINCIPAL ===== -->
+<div class="container-fluid">
+  <h1 class="h3 mb-4 text-center text-uppercase">Slider - Grupo 02</h1>
 
-          <!-- === 1. TEORÍA === -->
-          <div class="content-card p-4 mb-4">
-            <h5><strong>1. Teoría</strong></h5>
-            <pre><code>El Slider permite mostrar imágenes o textos de manera dinámica.
-Bootstrap y jQuery facilitan la creación de efectos automáticos y navegación entre elementos.</code></pre>
-            <button class="btn btn-primary mt-2">EJECUTAR</button>
-            <div class="resultado mt-3" style="display:none;">
-              <p>Un Slider mejora la presentación de contenido visual sin recargar la interfaz.</p>
-              <img src="img/019c5b0c-d672-4260-a486-c33711689d22.jpg" class="img-fluid rounded" alt="Slider teoría">
-            </div>
-          </div>
+  <!-- === 1. TEORÍA === -->
+  <div class="card content-card mb-4">
+    <div class="card-header">
+      <h6 class="m-0 font-weight-bold">1. TEORÍA</h6>
+    </div>
 
-          <!-- === 2. EJEMPLO === -->
-          <div class="content-card p-4 mb-4">
-            <h5><strong>2. Ejemplo (Video + Explicación)</strong></h5>
-            <pre><code>&lt;div id="miSlider" class="carousel slide"&gt;
+    <div class="card-body">
+      <!-- 1.1 Definición y usos -->
+      <h5 class="card-title">¿Qué es un Slider (Carrusel)?</h5>
+      <p>
+        Un <strong>slider</strong> (o carrusel) muestra una serie de elementos (imágenes, texto o video)
+        alternándolos dentro del mismo espacio. Sirve para <em>destacar</em> contenido clave sin recargar
+        la interfaz y mejora la experiencia al presentar información de forma visual y dinámica.
+      </p>
+
+      <h6 class="mt-3">¿Cuándo usarlo?</h6>
+      <ul>
+        <li>Portadas o <em>hero sections</em> con campañas, productos o mensajes principales.</li>
+        <li>Galerías de imágenes con navegación manual y/o automática.</li>
+        <li>Testimonios o <em>highlights</em> de proyectos/servicios.</li>
+      </ul>
+
+      <!-- 1.2 Anatomía -->
+      <h5 class="mt-4">Anatomía del Slider en Bootstrap 5</h5>
+      <p>Estructura mínima: contenedor principal, área interna y al menos un ítem activo:</p>
+      <div class="bg-light p-3 rounded mb-3">
+<pre><code>&lt;div id="miSlider" class="carousel slide" data-bs-ride="carousel"&gt;
   &lt;div class="carousel-inner"&gt;
     &lt;div class="carousel-item active"&gt;
-      &lt;img src="img/imagen1.jpg"&gt;
+      &lt;img src="img/imagen1.jpg" class="d-block w-100" alt="Descripción de la imagen 1"&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-            <button class="btn btn-primary mt-2">EJECUTAR</button>
-            <div class="resultado mt-3" style="display:none;">
-              <video src="vid/video-demo.mp4" class="w-100 rounded mb-3" controls></video>
-              <p>El código anterior muestra la estructura básica del carrusel con clases <code>.carousel</code> y <code>.carousel-item</code>.</p>
+      </div>
+
+      <ul>
+        <li><code>.carousel</code>: contenedor principal del carrusel.</li>
+        <li><code>.carousel-inner</code>: envoltorio de todas las diapositivas.</li>
+        <li><code>.carousel-item</code>: cada diapositiva (la primera con <code>.active</code>).</li>
+        <li><code>&lt;img class="d-block w-100"&gt;</code>: imagen responsiva a ancho completo.</li>
+      </ul>
+
+      <!-- 1.3 Navegación -->
+      <h5 class="mt-4">Navegación: indicadores y controles</h5>
+      <p>Los <strong>indicadores</strong> (puntos) y los <strong>controles</strong> (flechas) permiten moverse entre diapositivas:</p>
+      <div class="bg-light p-3 rounded mb-3">
+<pre><code>&lt;!-- Indicadores --&gt;
+&lt;div class="carousel-indicators"&gt;
+  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="1"&gt;&lt;/button&gt;
+  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="2"&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Controles --&gt;
+&lt;button class="carousel-control-prev" type="button" data-bs-target="#miSlider" data-bs-slide="prev"&gt;
+  &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span class="visually-hidden"&gt;Anterior&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="carousel-control-next" type="button" data-bs-target="#miSlider" data-bs-slide="next"&gt;
+  &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span class="visually-hidden"&gt;Siguiente&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <!-- 1.4 Captions -->
+      <h5 class="mt-4">Captions (títulos y textos sobre la imagen)</h5>
+      <p>
+        Los <strong>captions</strong> explican cada imagen. Van dentro de <code>.carousel-item</code> en
+        un contenedor <code>.carousel-caption</code>. En tu <code>style.css</code> ya usas estilos que
+        contrastan bien con el fondo.
+      </p>
+      <div class="bg-light p-3 rounded mb-3">
+<pre><code>&lt;div class="carousel-item active"&gt;
+  &lt;img src="img/sala.jpg" class="d-block w-100" alt="Sala"&gt;
+  &lt;div class="carousel-caption d-none d-md-block"&gt;
+    &lt;h5&gt;Sala&lt;/h5&gt;
+    &lt;p&gt;Ambiente moderno y acogedor.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <!-- 1.5 Atributos clave -->
+      <h5 class="mt-4">Atributos clave (data-*)</h5>
+      <ul>
+        <li><code>data-bs-ride="carousel"</code>: ciclo automático.</li>
+        <li><code>data-bs-interval="3500"</code>: tiempo (ms) entre transiciones.</li>
+        <li><code>data-bs-pause="hover"</code>: pausa al pasar el mouse.</li>
+        <li><code>data-bs-wrap="true"</code>: vuelve al primer ítem al terminar.</li>
+        <li><code>data-bs-touch="true"</code>: gestos táctiles en móviles.</li>
+      </ul>
+
+      <!-- 1.6 Tipos de transición -->
+      <h5 class="mt-4">Tipos de transición</h5>
+      <ul>
+        <li><strong>Deslizamiento</strong> (por defecto): horizontal.</li>
+        <li><strong>Desvanecimiento</strong> (suave): agrega <code>.carousel-fade</code> al contenedor.</li>
+      </ul>
+      <div class="bg-light p-3 rounded mb-3">
+<pre><code>&lt;div id="miSlider" class="carousel slide carousel-fade" data-bs-ride="carousel"&gt;...&lt;/div&gt;</code></pre>
+      </div>
+
+      <!-- 1.7 Accesibilidad y buenas prácticas -->
+      <h5 class="mt-4">Buenas prácticas</h5>
+      <ul>
+        <li>Siempre define <code>alt</code> en las imágenes.</li>
+        <li>Usa <code>aria-label</code> en los indicadores (p.ej., “Diapositiva 1”).</li>
+        <li>Optimiza el peso de las imágenes para rendimiento.</li>
+        <li>Evita IDs duplicados si hay más de un carrusel en la página.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- === 2. EJEMPLO (VIDEO + EXPLICACIÓN) === -->
+  <div class="card content-card mb-4">
+    <div class="card-header">
+      <h6 class="m-0 font-weight-bold">2. EJEMPLO (Video + Explicación)</h6>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title">¿Qué verás en el video?</h5>
+      <ul>
+        <li>Estructura base del carrusel en Bootstrap 5 (contenedor + inner + items).</li>
+        <li>Cómo añadir indicadores (puntos) y controles (flechas).</li>
+        <li>Cómo superponer <em>captions</em> legibles (título + texto) en cada imagen.</li>
+        <li>Configuración por atributos <code>data-*</code> y errores comunes a evitar.</li>
+      </ul>
+
+      <h6 class="mt-3">Estructura base (guía rápida)</h6>
+      <div class="bg-light p-3 rounded mb-3">
+<pre><code>&lt;div id="miSlider" class="carousel slide" data-bs-ride="carousel"&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="img/sala.jpg" class="d-block w-100" alt="Sala"&gt;
+    &lt;/div&gt;
+    &lt;!-- más .carousel-item ... --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <h6 class="mt-3">Indicadores + Controles</h6>
+      <div class="bg-light p-3 rounded mb-3">
+<pre><code>&lt;div class="carousel-indicators"&gt;
+  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="0" class="active" aria-label="Diapositiva 1"&gt;&lt;/button&gt;
+  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="1" aria-label="Diapositiva 2"&gt;&lt;/button&gt;
+  &lt;button type="button" data-bs-target="#miSlider" data-bs-slide-to="2" aria-label="Diapositiva 3"&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;button class="carousel-control-prev" type="button" data-bs-target="#miSlider" data-bs-slide="prev"&gt;
+  &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span class="visually-hidden"&gt;Anterior&lt;/span&gt;
+&lt;/button&gt;
+&lt;button class="carousel-control-next" type="button" data-bs-target="#miSlider" data-bs-slide="next"&gt;
+  &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
+  &lt;span class="visually-hidden"&gt;Siguiente&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+      </div>
+
+      <h6 class="mt-3">Captions (título + texto)</h6>
+      <div class="bg-light p-3 rounded mb-3">
+<pre><code>&lt;div class="carousel-item active"&gt;
+  &lt;img src="img/comedor.jpg" class="d-block w-100" alt="Comedor"&gt;
+  &lt;div class="carousel-caption d-none d-md-block"&gt;
+    &lt;h5&gt;Comedor Elegante&lt;/h5&gt;
+    &lt;p&gt;Diseño minimalista para reuniones especiales.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <button class="btn btn-primary mt-2">EJECUTAR</button>
+
+      <!-- Resultado: Video + guía visual (se muestra al hacer clic) -->
+      <div class="resultado d-none mt-3">
+        <video class="w-100 rounded mb-4" controls preload="none" poster="img/sala.jpg">
+          <source src="vid/video-demo.mp4" type="video/mp4">
+          Tu navegador no soporta la reproducción de videos.
+        </video>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="p-3 border rounded h-100">
+              <h6 class="fw-bold">1) Contenedor + inner</h6>
+              <p class="mb-2">El <code>#miSlider</code> envuelve el carrusel y dentro va <code>.carousel-inner</code> con las diapositivas.</p>
+              <pre class="mb-0"><code>&lt;div id="miSlider" class="carousel slide"&gt;
+  &lt;div class="carousel-inner"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 border rounded h-100">
+              <h6 class="fw-bold">2) Diapositivas</h6>
+              <p class="mb-2">Cada imagen va en un <code>.carousel-item</code>. La primera con <code>.active</code>.</p>
+              <pre class="mb-0"><code>&lt;div class="carousel-item active"&gt;
+  &lt;img src="img/sala.jpg" class="d-block w-100" alt="Sala"&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 border rounded h-100">
+              <h6 class="fw-bold">3) Indicadores</h6>
+              <p class="mb-2">Puntos para saltar a una diapositiva concreta.</p>
+              <pre class="mb-0"><code>&lt;div class="carousel-indicators"&gt;
+  &lt;button data-bs-target="#miSlider" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+  &lt;button data-bs-target="#miSlider" data-bs-slide-to="1"&gt;&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="p-3 border rounded h-100">
+              <h6 class="fw-bold">4) Controles</h6>
+              <p class="mb-2">Flechas de navegación anterior/siguiente.</p>
+              <pre class="mb-0"><code>&lt;button class="carousel-control-prev" data-bs-target="#miSlider" data-bs-slide="prev"&gt;...&lt;/button&gt;
+&lt;button class="carousel-control-next" data-bs-target="#miSlider" data-bs-slide="next"&gt;...&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-secondary mt-4 mb-0" role="alert">
+          <strong>Tip:</strong> En la parte 3 verás solo la <em>ejecución real</em> con imágenes de <em>sala</em>, <em>comedor</em> y <em>perro</em>, auto-play y captions.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === 3. EJECUCIÓN DEL CÓDIGO (SOLO VIVO) === -->
+  <div class="card content-card mb-4">
+    <div class="card-header">
+      <h6 class="m-0 font-weight-bold">3. EJECUCIÓN DEL CÓDIGO</h6>
+    </div>
+
+    <div class="card-body">
+ <p class="mb-3">
+  A continuación puedes probar y visualizar el funcionamiento del carrusel. 
+  Haz clic en <strong>EJECUTAR</strong> para mostrar el ejemplo en vivo. 
+  Usa las <em>flechas</em> o los <em>puntos</em> para cambiar de imagen; en móvil puedes <em>deslizar</em> con el dedo. 
+  El carrusel avanza automáticamente cada 3.5 s y se pausa al pasar el mouse.
+</p>
+
+
+      <!-- Botón para mostrar solo la ejecución en vivo -->
+      <button class="btn btn-primary mt-2">EJECUTAR</button>
+
+      <!-- Vista en vivo (oculta hasta presionar EJECUTAR) -->
+      <div class="resultado d-none mt-3">
+        <div id="miSlider" class="carousel slide mb-3"
+             data-bs-ride="carousel"
+             data-bs-interval="3500"
+             data-bs-pause="hover"
+             data-bs-touch="true"
+             data-bs-wrap="true">
+
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#miSlider" data-bs-slide-to="0" class="active" aria-label="Diapositiva 1"></button>
+            <button type="button" data-bs-target="#miSlider" data-bs-slide-to="1" aria-label="Diapositiva 2"></button>
+            <button type="button" data-bs-target="#miSlider" data-bs-slide-to="2" aria-label="Diapositiva 3"></button>
+          </div>
+
+          <!-- Diapositivas -->
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/imagen1.jpg" class="d-block w-100" alt="Sala moderna">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="d-inline-block px-3 py-2 bg-dark bg-opacity-50 rounded">
+                  <h5 class="mb-1 text-white">Sala Moderna</h5>
+                  <p class="mb-0 text-white-50">Ambiente acogedor con iluminación natural.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="img/imagen2.jpg" class="d-block w-100" alt="Comedor elegante">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="d-inline-block px-3 py-2 bg-dark bg-opacity-50 rounded">
+                  <h5 class="mb-1 text-white">Comedor Elegante</h5>
+                  <p class="mb-0 text-white-50">Diseño minimalista para reuniones especiales.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img src="img/imagen3.jpg" class="d-block w-100" alt="Perro en el jardín">
+              <div class="carousel-caption d-none d-md-block">
+                <div class="d-inline-block px-3 py-2 bg-dark bg-opacity-50 rounded">
+                  <h5 class="mb-1 text-white">Compañero Peludo</h5>
+                  <p class="mb-0 text-white-50">Diversión y energía en casa.</p>
+                </div>
+              </div>
             </div>
           </div>
 
-          <!-- === 3. EJECUCIÓN DEL CÓDIGO === -->
-<div class="content-card p-4 mb-4">
-  <h5><strong>3. Ejecución del Código</strong></h5>
-  <pre><code>Implementación del Slider funcional de Bootstrap con controles de navegación y captions.</code></pre>
-  <button class="btn btn-primary mt-2">EJECUTAR</button>
-  <div class="resultado mt-3" style="display:none;">
-    <div id="miSlider" class="carousel slide mb-3" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
-      
-      <!-- Indicadores -->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#miSlider" data-bs-slide-to="0" class="active"></button>
-        <button type="button" data-bs-target="#miSlider" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#miSlider" data-bs-slide-to="2"></button>
+          <!-- Controles -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#miSlider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#miSlider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+
+        <div class="alert alert-secondary mb-0" role="alert">
+          <strong>Listo:</strong> auto-play (3.5s), pausa al hover y gestos táctiles en móvil.
+        </div>
       </div>
-
-      <!-- Contenido del slider -->
-      <div class="carousel-inner">
-        
-        <!-- Imagen 1 -->
-        <div class="carousel-item active">
-          <img src="img/imagen1.jpg" class="d-block w-100" alt="Sala">
-          <div class="carousel-caption d-none d-md-block">
-            <p>Sala</p>
-            <p>Ambiente acogedor y moderno con decoración minimalista.</p>
-          </div>
-        </div>
-
-        <!-- Imagen 2 -->
-        <div class="carousel-item">
-          <img src="img/imagen2.jpg" class="d-block w-100" alt="Comedor">
-          <div class="carousel-caption d-none d-md-block">
-            <p>Comedor</p>
-            <p>Espacio perfecto para disfrutar de una buena comida en familia.</p>
-          </div>
-        </div>
-
-        <!-- Imagen 3 -->
-        <div class="carousel-item">
-          <img src="img/imagen3.jpg" class="d-block w-100" alt="Perro">
-          <div class="carousel-caption d-none d-md-block">
-            <p>Perro</p>
-            <p>El mejor amigo del hogar siempre acompañando cada momento.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Controles -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#miSlider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#miSlider" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
-
     </div>
   </div>
-</div>
 
-          <!-- === 4. EJERCICIO === -->
-          <div class="content-card p-4 mb-4">
-            <h5><strong>4. Ejercicio (Con Efecto / Animación)</strong></h5>
-            <pre><code>$(document).ready(function(){
+<!-- === 4. EJERCICIO (Con Efecto / Animación) === -->
+<div class="card content-card mb-4">
+  <div class="card-header">
+    <h6 class="m-0 font-weight-bold">4. EJERCICIO (Con Efecto / Animación)</h6>
+  </div>
+
+  <div class="card-body">
+    <!-- Explicación breve -->
+    <h5 class="card-title">¿Qué harás?</h5>
+   <p class="mb-3">
+  Este ejercicio crea un “mini-carrusel” con jQuery que alterna imágenes usando <em>fade</em>. 
+  Se apilan varias fotos dentro de un contenedor fijo; al iniciar, se ocultan todas excepto la primera. 
+  Luego, cada 3 segundos, la imagen visible se desvanece y aparece la siguiente. 
+  Puedes ajustar el tiempo de animación (1000 ms) y el intervalo (3000 ms).
+</p>
+
+    <ul class="mb-3">
+      <li>Contenedor fijo con imágenes apiladas (<code>position-absolute</code>).</li>
+      <li>Ocultas todas menos la primera; luego rotas con <code>fadeOut</code>/<code>fadeIn</code>.</li>
+      <li>Puedes ajustar <code>1000</code> ms (animación) y <code>3000</code> ms (intervalo).</li>
+    </ul>
+
+    <!-- Snippet guía (JS) -->
+    <h6 class="mt-2">Lógica (jQuery)</h6>
+    <div class="bg-light p-3 rounded mb-3">
+<pre><code>$(document).ready(function(){
   let index = 0;
   const imgs = $('#sliderFade .fade-img');
-  setInterval(() => {
+  // Oculta todas menos la primera
+  imgs.not(':first').hide();
+  // Cambia cada 3 s
+  setInterval(function () {
     imgs.eq(index).fadeOut(1000);
     index = (index + 1) % imgs.length;
     imgs.eq(index).fadeIn(1000);
   }, 3000);
 });</code></pre>
-            <button class="btn btn-primary mt-2">EJECUTAR</button>
-            <div class="resultado mt-3" style="display:none;">
-              <div id="sliderFade" class="position-relative overflow-hidden mb-4" style="height:400px;">
-                <img src="img/imagen1.jpg" class="img-fluid position-absolute w-100 h-100 fade-img active" alt="Imagen1">
-                <img src="img/imagen2.jpg" class="img-fluid position-absolute w-100 h-100 fade-img" alt="Imagen2">
-                <img src="img/imagen3.jpg" class="img-fluid position-absolute w-100 h-100 fade-img" alt="Imagen3">
-              </div>
-            </div>
-          </div>
+    </div>
 
-        </div>
+    <!-- Botón para mostrar la ejecución -->
+    <button class="btn btn-primary mt-2">EJECUTAR</button>
+
+    <!-- Vista en vivo (oculta hasta presionar EJECUTAR) -->
+    <div class="resultado d-none mt-3">
+      <div id="sliderFade" class="position-relative overflow-hidden mb-4" style="height:400px;">
+        <!-- Deja la primera visible y las demás ocultas para evitar parpadeos antes del JS -->
+        <img src="img/imagen1.jpg" class="img-fluid position-absolute w-100 h-100 fade-img" alt="Imagen 1" style="display:block;">
+        <img src="img/imagen2.jpg" class="img-fluid position-absolute w-100 h-100 fade-img" alt="Imagen 2" style="display:none;">
+        <img src="img/imagen3.jpg" class="img-fluid position-absolute w-100 h-100 fade-img" alt="Imagen 3" style="display:none;">
+      </div>       
       </div>
     </div>
   </div>
+</div>
 
-  <!-- ===== SCRIPTS ===== -->
-<script src="../../vendor/jquery/jquery.min.js"></script>
-<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
-<script src="../../js/sb-admin-2.min.js"></script>
+<!-- ===== SCRIPTS ===== -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Si usas SB Admin 2, mantenlo después de jQuery/Bootstrap -->
+<script src="../../js/sb-admin-2.min.js"></script>
+
+<!-- Tu JS (si lo necesitas) -->
 <script src="js/main.js"></script>
 
 <script>
-  $(document).ready(function () {
-    // Botones "EJECUTAR"
-    $(".btn.btn-primary").click(function () {
-      $(this).next(".resultado").slideToggle(500);
+  $(function () {
+    // Botón EJECUTAR: mostrar/ocultar el resultado (sin conflictos)
+    $(document).on('click', '.content-card .btn.btn-primary', function () {
+      const $card = $(this).closest('.content-card');
+      const $res  = $card.find('.resultado').first();
+
+      // Si esta tarjeta contiene el slider del Ejercicio 4, inicialízalo SOLO una vez
+      if ($res.find('#sliderFade').length && !$res.data('fade-init')) {
+        const $imgs = $res.find('#sliderFade .fade-img');
+        if ($imgs.length) {
+          $imgs.not(':first').hide();
+          let i = 0;
+          setInterval(function () {
+            $imgs.eq(i).fadeOut(1000);
+            i = (i + 1) % $imgs.length;
+            $imgs.eq(i).fadeIn(1000);
+          }, 3000);
+          $res.data('fade-init', true);
+        }
+      }
+
+      $res.toggleClass('d-none');
     });
 
-    // Efecto automático del ejercicio 4
-    let index = 0;
-    const imgs = $('#sliderFade .fade-img');
-    imgs.not(':first').hide();
-    setInterval(() => {
-      imgs.eq(index).fadeOut(1000);
-      index = (index + 1) % imgs.length;
-      imgs.eq(index).fadeIn(1000);
-    }, 3000);
+    // Inicializa el carrusel de la Parte 3 si existe (Bootstrap 5 API)
+    const slider = document.querySelector('#miSlider');
+    if (slider && window.bootstrap && bootstrap.Carousel) {
+      new bootstrap.Carousel(slider, {
+        interval: 3500,
+        pause: 'hover',
+        touch: true,
+        wrap: true
+      });
+    }
   });
 </script>
